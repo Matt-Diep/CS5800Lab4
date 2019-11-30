@@ -11,7 +11,8 @@ public class Student {
 
     private String name;                    // Students full name
     private ArrayList<Double> assignments;  // scores for the assignments
-    private ArrayList<Double> exams;        // scores for the exams
+    private ArrayList<Double> exams;        // scores for the exams\
+    private boolean dropLowestScore;
     
 	/**
 	 * Constructs the student from their name
@@ -21,6 +22,7 @@ public class Student {
 		this.name = name;
         assignments = new ArrayList<Double>();
         exams = new ArrayList<Double>();
+        dropLowestScore = false;
 	}
 
 	/**
@@ -43,6 +45,21 @@ public class Student {
 	 */
 	public void addExamScore (double es) {
 		exams.add(es);
+	}
+	
+	public double getAverage() {
+		if(dropLowestScore) {
+			Context context = new Context(new AssignmentAvgB());
+			return context.executeStrategy(assignments, exams);
+		}
+		else {
+			Context context = new Context(new AssignmentAvgA());
+			return context.executeStrategy(assignments, exams);
+		}
+	}
+	
+	public void setDropLowestAssign(boolean drop) {
+		dropLowestScore = drop;
 	}
 
 

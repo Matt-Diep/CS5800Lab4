@@ -13,7 +13,7 @@ public class Main {
     
 	public static void main(String[] args) {
 
-        Student student = new Student("Harry Potter");
+        Student student = new Student("Matt Diep");
         student.addAssignmentScore(98.5);
         student.addAssignmentScore(90.1);
         student.addAssignmentScore(78.3);
@@ -31,6 +31,8 @@ public class Main {
                            df.format(student.getAverage()));
         // switch back to algorithm A:
         student.setDropLowestAssign(false);
+        System.out.println(student.getName() + "  " +
+                df.format(student.getAverage()));
         
 //        //test the GradeTracker
 //        GradeTracker gt = new GradeTracker(student);
@@ -58,7 +60,7 @@ public class Main {
 //        while (!ad.done()) {
 //            System.out.println("next average "  +
 //                               df.format(ad.getNextAvg()));
-        }
+//        }
 
     }
 }
