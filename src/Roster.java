@@ -38,4 +38,11 @@ public class Roster {
         students.add(student);
     }
     
+    public ArrayList<Student> getStudents () {
+    	return this.students;
+    }
+    
+    public AvgDispenser getDispenser() {
+    	return new AvgIterator(this);
+    }
 }

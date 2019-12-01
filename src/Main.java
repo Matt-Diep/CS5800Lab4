@@ -40,27 +40,27 @@ public class Main {
         student.addExamScore(33);
         System.out.println("Added an exam score.");
         System.out.println("letter grade: " + gt.getLetterGrade());
-//        
-//        //add a new student
-//        Student hg = new Student("Hermione Granger");
-//        hg.addAssignmentScore(96.2);
-//        hg.addAssignmentScore(98.1);
-//        hg.addAssignmentScore(99.3);
-//        hg.addExamScore(95);
-//        hg.addExamScore(97);
-//        
-//        //new roster
-//        Roster potions = new Roster("Potions","MAG2308");
-//        potions.addStudent(student);
-//        potions.addStudent(hg);
-//        
-//        //test the roster traversal
-//        System.out.println("Potions grades:");
-//        AvgDispenser ad = potions.getDispenser();
-//        while (!ad.done()) {
-//            System.out.println("next average "  +
-//                               df.format(ad.getNextAvg()));
-//        }
+        
+        //add a new student
+        Student hg = new Student("Hermione Granger");
+        hg.addAssignmentScore(96.2);
+        hg.addAssignmentScore(98.1);
+        hg.addAssignmentScore(99.3);
+        hg.addExamScore(95);
+        hg.addExamScore(97);
+        
+        //new roster
+        Roster potions = new Roster("Potions","MAG2308");
+        potions.addStudent(student);
+        potions.addStudent(hg);
+        
+        //test the roster traversal
+        System.out.println("Potions grades:");
+        AvgDispenser ad = potions.getDispenser();
+        while (!ad.done()) {
+            System.out.println("next average "  +
+                               df.format(ad.getNextAvg()));
+        }
 
     }
 }
