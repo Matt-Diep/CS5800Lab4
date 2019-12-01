@@ -1,4 +1,4 @@
-
+import java.util.Observable;
 import java.util.ArrayList;
 
 /**
@@ -7,7 +7,8 @@ import java.util.ArrayList;
  * @author Jill Seaman
  *https://userweb.cs.txstate.edu/~js236/cs3354/
  */
-public class Student {
+@SuppressWarnings("deprecation")
+public class Student extends Observable{
 
     private String name;                    // Students full name
     private ArrayList<Double> assignments;  // scores for the assignments
@@ -38,6 +39,8 @@ public class Student {
 	 */
 	public void addAssignmentScore (double as) {
 		assignments.add(as);
+		setChanged();
+		notifyObservers();
 	}
 	/**
 	 * Adds an exam score to the collection of exam scores for the student.
@@ -45,6 +48,8 @@ public class Student {
 	 */
 	public void addExamScore (double es) {
 		exams.add(es);
+		setChanged();
+		notifyObservers();
 	}
 	
 	public double getAverage() {

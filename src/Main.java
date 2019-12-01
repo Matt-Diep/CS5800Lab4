@@ -34,12 +34,12 @@ public class Main {
         System.out.println(student.getName() + "  " +
                 df.format(student.getAverage()));
         
-//        //test the GradeTracker
-//        GradeTracker gt = new GradeTracker(student);
-//        System.out.println("letter grade: " + gt.getLetterGrade());
-//        student.addExamScore(33);
-//        System.out.println("Added an exam score.");
-//        System.out.println("letter grade: " + gt.getLetterGrade());
+        //test the GradeTracker
+        GradeTracker gt = new GradeTracker(student);
+        System.out.println("letter grade: " + gt.getLetterGrade());
+        student.addExamScore(33);
+        System.out.println("Added an exam score.");
+        System.out.println("letter grade: " + gt.getLetterGrade());
 //        
 //        //add a new student
 //        Student hg = new Student("Hermione Granger");
